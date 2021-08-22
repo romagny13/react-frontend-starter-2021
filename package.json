@@ -7,8 +7,7 @@
   "scripts": {
     "prebuild": "rimraf dist",
     "build": "webpack --mode=production --progress",
-    "start": "webpack serve --mode=development --open --hot --port 3000",
-    "dev": "docker-compose -f docker-compose.yml up"
+    "start": "webpack serve --mode=development --open --hot --port 3000"
   },
   "keywords": [],
   "author": "",
