@@ -1,5 +1,5 @@
 
-# REACT SITE STARTER 2021
+# REACT FRONTEND STARTER 2021
 
 > React Starter kit for website
 
