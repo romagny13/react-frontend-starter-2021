@@ -1,7 +1,7 @@
 
 # React Frontend Starter 2021 [WIP]
 
-> React Starter kit for website
+> React starter kit for frontend
 
 
 ## babel
