@@ -7,7 +7,7 @@
   "scripts": {
     "prebuild": "rimraf dist",
     "build": "webpack --mode=production --progress",
-    "start": "webpack serve --mode=development --open --hot --port 3000"
+    "start": "webpack serve --mode=development --open --hot --history-api-fallback --port 3000"
   },
   "keywords": [],
   "author": "",
