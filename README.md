@@ -61,4 +61,52 @@ Build and run (--rm remove once stopped)
 ```
 docker build -t romagny13/react-site-starter .
 docker run -p 3000:3000 --name react-starter --rm romagny13/react-site-starter:latest
+```       
+
+## Tests with Jest
+
+```
+npm i jest @testing-library/react @testing-library/jest-dom @testing-library/user-event -D
+```
+
+Create a `setupTests.js` file
+
+```js
+import "@testing-library/jest-dom";
+```
+
+Create a `jest.config.js` configuration file
+
+```js
+module.exports = {
+  roots: ["<rootDir>/src"],
+  transform: {
+    "^.+\\.(js|jsx)$": "babel-jest"
+  },
+  setupFilesAfterEnv: [
+    "@testing-library/jest-dom/extend-expect",
+    "<rootDir>/setupTests.js"
+  ],
+  testMatch: ["**/__tests__/**/*.[jt]s?(x)", "**/?(*.)+(spec|test).[jt]s?(x)"],
+  moduleFileExtensions: ["ts", "tsx", "js", "jsx", "json", "node"],
+  testEnvironment: "jsdom"
+};
+```
+
+Add a script to `package.json`
+
+```json
+"test": "jest"
+```
+
+Suggestion for fetch: use `isomorphic-fetch`
+
+```
+npm i isomorphic-fetch -D
+```
+
+... Then import in test file
+
+```js
+import 'isomorphic-fetch';
 ```
