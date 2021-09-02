@@ -65,6 +65,12 @@ docker run -p 3000:3000 --name react-starter --rm romagny13/react-site-starter:l
 
 ## Tests with Jest
 
+[Jest](https://jestjs.io/docs/getting-started)
+
+[@testing-library/react](https://testing-library.com/docs/react-testing-library/cheatsheet)
+[@testing-library/user-event](https://testing-library.com/docs/ecosystem-user-event/)
+[@testing-library/jest-dom](https://github.com/testing-library/jest-dom)
+
 ```
 npm i jest @testing-library/react @testing-library/jest-dom @testing-library/user-event -D
 ```
@@ -99,8 +105,19 @@ Add a script to `package.json`
 "test": "jest"
 ```
 
-Suggestion for fetch: use `isomorphic-fetch`
+_Coverage_
 
+```json
+"test:coverage": "npm test -- --coverage"
+```
+
+_Watch (git required... "git init")_
+
+```json
+"test:watch": "npm test -- --onlyChanged --watch"
+```
+
+Suggestion for fetch: use `isomorphic-fetch`
 ```
 npm i isomorphic-fetch -D
 ```
@@ -110,3 +127,43 @@ npm i isomorphic-fetch -D
 ```js
 import 'isomorphic-fetch';
 ```
+
+### Cypress (e2e)
+
+[Docs](https://docs.cypress.io/guides/getting-started/writing-your-first-test)
+
+```
+npm i cypress -D
+``` 
+
+Add a script
+
+```json
+"cypress:open": "cypress open", 
+"cypress:run": "cypress run" 
+```
+
+_Note: "cypress open" runs the tests in the browser (chrome by default), "cypress run" displays tests in the console_
+
+Provide a test match, example:
+
+```json
+"cypress:run": "cypress run -s cypress/integration/**/*.spec.js"
+```
+
+`cypress.json` : provide the base url of the site
+
+```json
+{
+  "baseUrl": "http://localhost:3000"
+}
+```
+
+Create a directory `cypress/integration`. Add tests.
+
+
+Run tests
+
+```
+npm run cypress:run
+``` 
