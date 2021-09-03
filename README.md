@@ -61,7 +61,24 @@ Build and run (--rm remove once stopped)
 ```
 docker build -t romagny13/react-site-starter .
 docker run -p 3000:3000 --name react-starter --rm romagny13/react-site-starter:latest
-```       
+``` 
+
+## Prettier
+
+Install Prettier allows to add a script to format source code
+
+```
+npm i prettier -D
+```
+
+
+Script package.json
+
+```json
+"format": "prettier --write src"
+```
+
+[Configure .prettierrc](https://prettier.io/docs/en/configuration.html)
 
 ## Tests with Jest
 
