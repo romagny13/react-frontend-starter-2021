@@ -5,7 +5,6 @@ export default function App() {
 
   useEffect(async () => {
     console.log(process.env.NODE_ENV);
-
     function testAsync() {
       return setTimeout(() => {
         console.log("transform-runtime ok");
@@ -22,7 +21,9 @@ export default function App() {
     <>
       <h1>Sample</h1>
       <p>Count: {count}</p>
-      <button onClick={handleClick}>Increment</button>
+      <button type="button" onClick={handleClick}>
+        Increment
+      </button>
     </>
   );
 }
