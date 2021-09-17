@@ -63,22 +63,87 @@ docker build -t romagny13/react-site-starter .
 docker run -p 3000:3000 --name react-starter --rm romagny13/react-site-starter:latest
 ``` 
 
-## Prettier
 
-Install Prettier allows to add a script to format source code
+## eslint and prettier
 
 ```
-npm i prettier -D
+npm install -D eslint prettier eslint-config-prettier eslint-plugin-prettier
+```
+Create .eslintrc.son 
+
+```
+npx eslint --init
 ```
 
+To check syntax, find problems, and enforce code style
+...Use a popular style guide ... Airbnb: https://github.com/airbnb/javascript ... JSON
+... install dependencies
 
-Script package.json
 
 ```json
-"format": "prettier --write src"
+{
+    "env": {
+        "browser": true,
+        "es2021": true
+    },
+    "extends": [
+        "plugin:react/recommended",
+        "airbnb",
+        "eslint-config-prettier"
+    ],
+    "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": true
+        },
+        "ecmaVersion": 12,
+        "sourceType": "module"
+    },
+    "plugins": [
+        "react",
+        "eslint-plugin-prettier"
+    ],
+    "rules": {
+        "prettier/prettier": "error",
+        "no-unused-vars": "warn",
+        "no-console": "off",
+        "func-names": "off",
+        "no-process-exit": "off",
+        "object-shorthand": "off",
+        "class-methods-use-this": "off",
+        "react/jsx-filename-extension": [1, {"extensions": [".js", ".jsx"]}],
+        "react/jsx-one-expression-per-line": "off"
+    }
+}
 ```
 
+.prettierrc
+
+```json
+{
+  "arrowParens": "avoid",
+  "bracketSpacing": true,
+  "bracketSameLine": false,
+  "jsxSingleQuote": false,
+  "printWidth": 80,
+  "semi": true,
+  "singleQuote": false,
+  "tabWidth": 2,
+  "trailingComma": "none",
+  "useTabs": false
+}
+```
+
+scripts
+
+```
+"format": "prettier --write src",
+"lint": "eslint --fix src"
+```
+
+[eslint](https://eslint.org/docs/user-guide/configuring/)
+
 [Configure .prettierrc](https://prettier.io/docs/en/configuration.html)
+
 
 ## Tests with Jest
 
