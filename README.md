@@ -133,7 +133,7 @@ To check syntax, find problems, and enforce code style
 }
 ```
 
-scripts
+Scripts
 
 ```
 "format": "prettier --write src",
