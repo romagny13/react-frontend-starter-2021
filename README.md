@@ -59,8 +59,8 @@ Script package.json
 Build and run (--rm remove once stopped)
 
 ```
-docker build -t romagny13/react-site-starter .
-docker run -p 3000:3000 --name react-starter --rm romagny13/react-site-starter:latest
+docker build -t romagny13/react-frontend-starter-2021 .
+docker run -p 3000:3000 --name react-starter --rm romagny13/react-frontend-starter-2021:latest
 ``` 
 
 
